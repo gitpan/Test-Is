@@ -11,7 +11,9 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Skip test in a declarative way, following the Lancaster Consensus",
   "AUTHOR" => "Olivier Mengu\303\251 <dolmen\@cpan.org>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Test::More" => "0.88"
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -22,28 +24,12 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Test::More" => "0.88"
   },
-  "TEST_REQUIRES" => {
-    "Test::More" => "0.88"
-  },
-  "VERSION" => 20130414,
+  "VERSION" => "20130414.1",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
-
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
-  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
-  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
-  for my $mod ( keys %$tr ) {
-    if ( exists $br->{$mod} ) {
-      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
-    }
-    else {
-      $br->{$mod} = $tr->{$mod};
-    }
-  }
-}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

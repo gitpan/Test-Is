@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Test::Is;
 {
-  $Test::Is::VERSION = '20130414';
+  $Test::Is::VERSION = '20130414.1';
 }
 
 sub import
@@ -48,7 +48,7 @@ Test::Is - Skip test in a declarative way, following the Lancaster Consensus
 
 =head1 VERSION
 
-version 20130414
+version 20130414.1
 
 =head1 SYNOPSIS
 

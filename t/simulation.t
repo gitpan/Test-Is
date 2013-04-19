@@ -66,7 +66,8 @@ sub check_tests
 	my $name = shift @$checks;
 	is($result->$prop, $expected, "$title: $name")
 	    or do {
-		diag($output =~ s/^/### /gmr);
+		(my $formatted_output = $output) =~ s/^/### /gm;
+		diag($formatted_output);
 		last CHECKS	
 	    };
     }

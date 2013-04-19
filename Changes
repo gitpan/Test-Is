@@ -1,5 +1,8 @@
 Revision history for Test-Is.
 
+20130414.1    2013-04-19    DOLMEN (Olivier Mengué)
+	Fix t/simulation.t for perl < 5.14
+
 20130414     2013-04-16    DOLMEN (Olivier Mengué)
 	Initial release.
 	Work started at the Perl QA Hackathon 2013, just after the
