@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Test::Is;
 {
-  $Test::Is::VERSION = '20130414.1';
+  $Test::Is::VERSION = '20130423';
 }
 
 sub import
@@ -15,7 +15,7 @@ sub import
 
     while (@_) {
 	if ($_[0] eq 'interactive') {
-	    skip_all($_[0]) if env('NON_INTERACTIVE');
+	    skip_all($_[0]) if env('NONINTERACTIVE_TESTING');
 	} elsif ($_[0] eq 'extended') {
 	    skip_all($_[0]) unless env('EXTENDED_TESTING');
 	} else {
@@ -48,7 +48,7 @@ Test::Is - Skip test in a declarative way, following the Lancaster Consensus
 
 =head1 VERSION
 
-version 20130414.1
+version 20130423
 
 =head1 SYNOPSIS
 
@@ -68,10 +68,12 @@ Both:
 
 =head1 DESCRIPTION
 
-This module is a simple way of following the specifications of the environment
+This module is a simple way of following the
+L<specifications of the environment|https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts>
 variables available for Perl tests as defined as one of the
-"Lancaster Consensus" at Perl QA Hackathon 2013. Those variables
-(C<NON_INTERACTIVE>, C<EXTENDED_TESTING>) define which tests should be
+"L<Lancaster Consensus|https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md>"
+at Perl QA Hackathon 2013. Those variables
+(C<NONINTERACTIVE_TESTING>, C<EXTENDED_TESTING>) define which tests should be
 skipped.
 
 If the environment does not match what the author of the test expected, the
@@ -87,7 +89,18 @@ you set yourself.
 
 =head1 SEE ALSO
 
+=over 4
+
+=item *
+
+L<Environment variables for testing contexts|https://github.com/Perl-Toolchain-Gang/toolchain-site/blob/master/lancaster-consensus.md#environment-variables-for-testing-contexts>:
+the specification of the Lancaster Consensus.
+
+=item *
+
 L<Test::DescribeMe> by WOLFSAGE, also created at Perl QA Hackathon 2013.
+
+=back
 
 =head1 AUTHOR
 

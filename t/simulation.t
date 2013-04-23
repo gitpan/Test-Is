@@ -8,7 +8,7 @@ eval { require TAP::Harness } or plan skip_all => 'TAP::Harness not available';
 
 my %ENV_NAMES = map { ($_ => undef) } qw(
     AUTOMATED_TESTING
-    NON_INTERACTIVE
+    NONINTERACTIVE_TESTING
     EXTENDED_TESTING
 );
 
@@ -79,7 +79,7 @@ sub check_tests
 check_tests(
 'non-interactive',
 {
-    NON_INTERACTIVE => 1,
+    NONINTERACTIVE_TESTING => 1,
 }, qw(t/pass.t t/interactive.t),
 [
     all_passed => 1, 'all passed',
@@ -128,7 +128,7 @@ check_tests(
 check_tests(
 'non-interactive, extended (both.t)',
 {
-    NON_INTERACTIVE => 1,
+    NONINTERACTIVE_TESTING => 1,
     EXTENDED_TESTING => 1,
 }, qw(t/pass.t t/both.t),
 [
@@ -148,7 +148,7 @@ check_tests(
 check_tests(
 'non-interactive, no extended (both.t)',
 {
-    NON_INTERACTIVE => 1,
+    NONINTERACTIVE_TESTING => 1,
 }, qw(t/pass.t t/both.t),
 [
     all_passed => 1, 'all passed',

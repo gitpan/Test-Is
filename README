@@ -1,11 +1,11 @@
 
 
 This archive contains the distribution Test-Is,
-version 20130414.1:
+version 20130423:
 
   Skip test in a declarative way, following the Lancaster Consensus
 
-This software is copyright (c) 2013 by Olivier Mengué.
+This software is copyright (c) 2013 by Olivier Mengue.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
