@@ -22,4 +22,4 @@ requires:
 resources:
   homepage: https://github.com/dolmen/p5-Test-Is
   repository: https://github.com/dolmen/p5-Test-Is.git
-version: '20140823'
+version: '20140823.1'

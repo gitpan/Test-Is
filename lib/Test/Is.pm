@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Test::Is;
-$Test::Is::VERSION = '20140823';
+$Test::Is::VERSION = '20140823.1';
 sub import
 {
     shift;
@@ -47,7 +47,7 @@ Test::Is - Skip test in a declarative way, following the Lancaster Consensus
 
 =head1 VERSION
 
-version 20140823
+version 20140823.1
 
 =head1 SYNOPSIS
 
@@ -64,6 +64,13 @@ module:
 Both:
 
     use Test::Is 'interactive', 'extended';
+
+This test is only for perl 5.10+:
+
+    use Test::Is 'perl v5.10';
+    use feature 'say';
+    ...
+
 
 =head1 DESCRIPTION
 
