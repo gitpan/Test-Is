@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package Test::Is;
-{
-  $Test::Is::VERSION = '20130423';
-}
-
+$Test::Is::VERSION = '20140823';
 sub import
 {
     shift;
@@ -18,6 +15,8 @@ sub import
 	    skip_all($_[0]) if env('NONINTERACTIVE_TESTING');
 	} elsif ($_[0] eq 'extended') {
 	    skip_all($_[0]) unless env('EXTENDED_TESTING');
+        } elsif ($_[0] =~ /^(?:perl[- ])?(v?5\.[0-9.]+)\+?$/) {
+            eval "require $1" or skip_all("perl $1");
 	} else {
 	    die "invalid Test::Is argument";
 	}
@@ -48,7 +47,7 @@ Test::Is - Skip test in a declarative way, following the Lancaster Consensus
 
 =head1 VERSION
 
-version 20130423
+version 20140823
 
 =head1 SYNOPSIS
 
